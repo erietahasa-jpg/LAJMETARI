@@ -1,0 +1,3 @@
+# Bibliotekat që i duhen skriptit scripts/mbledh_lajmet.py
+feedparser>=6.0,<7    # lexon feed-et RSS/Atom
+requests>=2.31,<3     # shkarkon feed-et nga interneti

@@ -1,0 +1,595 @@
+/* =========================================================================
+   style.css — Pamja e Lajmëtarit AL·KS
+   Frymëzimi: faqja e parë e një gazete klasike (letër, bojë, vija ndarëse),
+   me ngjyrat e kuqe të Shqipërisë dhe blu-ari të Kosovës si thekse.
+
+   Përmbajtja:
+    1. Ngjyrat (tema e ndritshme dhe e errët)
+    2. Bazat
+    3. Koka e gazetës dhe menuja
+    4. Shiriti "Të fundit"
+    5. Kokat e faqeve dhe filtrat
+    6. Kartat e lajmeve dhe Ballina
+    7. Horoskopi
+    8. Lojërat (kartat, sudoku, fjalëkërkim, gjëegjëza, kuizi)
+    9. Animacionet
+   10. Ekranet e vogla
+   ========================================================================= */
+
+/* -------------------------------------------------------------------------
+   1. NGJYRAT
+   Të gjitha ngjyrat janë variabla; tema e errët ndryshon vetëm vlerat.
+   ------------------------------------------------------------------------- */
+:root {
+  --letra: #f6f1e7;            /* sfondi: letër gazete */
+  --letra-2: #fffdf8;          /* kartat */
+  --letra-3: #efe8da;          /* sipërfaqe të theksuara */
+  --boja: #17161a;             /* teksti kryesor: bojë */
+  --boja-2: #5a564e;           /* teksti dytësor */
+  --vija: #ded5c4;             /* vijat ndarëse */
+  --kuqe: #c8102e;             /* Shqipëria */
+  --blu: #1f4aa8;              /* Kosova */
+  --ari: #b8901c;              /* yjet e flamurit të Kosovës, theks */
+  --roze: #d1306f;
+  --vjollce: #6a44c2;
+  --jeshile: #1d8a5a;
+  --hije: 0 1px 2px rgb(40 30 10 / 6%), 0 8px 24px -12px rgb(40 30 10 / 18%);
+
+  --shkronja-tituj: "Playfair Display", Georgia, "Times New Roman", serif;
+  --shkronja-tekst: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --gjeresia: 1180px;
+  --rrezja: 14px;
+  color-scheme: light;
+}
+
+/* Tema e errët: sipas sistemit (nëse lexuesi s'ka zgjedhur "light") ose me zgjedhje të qartë */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --letra: #121318; --letra-2: #1b1d24; --letra-3: #23262f;
+    --boja: #f1ece2; --boja-2: #a8a397; --vija: #2e313b;
+    --kuqe: #ff5d6c; --blu: #86a8ff; --ari: #e6c35c;
+    --roze: #ff7fb2; --vjollce: #b9a0ff; --jeshile: #55d39d;
+    --hije: 0 1px 2px rgb(0 0 0 / 30%), 0 10px 30px -14px rgb(0 0 0 / 60%);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --letra: #121318; --letra-2: #1b1d24; --letra-3: #23262f;
+  --boja: #f1ece2; --boja-2: #a8a397; --vija: #2e313b;
+  --kuqe: #ff5d6c; --blu: #86a8ff; --ari: #e6c35c;
+  --roze: #ff7fb2; --vjollce: #b9a0ff; --jeshile: #55d39d;
+  --hije: 0 1px 2px rgb(0 0 0 / 30%), 0 10px 30px -14px rgb(0 0 0 / 60%);
+  color-scheme: dark;
+}
+
+/* Ngjyra për çdo rubrikë (etiketat mbi tituj, kartat e rubrikave) */
+[data-rubrika="Politikë"]   { --rubrika: var(--kuqe); }
+[data-rubrika="Ekonomi"]    { --rubrika: var(--jeshile); }
+[data-rubrika="Sport"]      { --rubrika: var(--blu); }
+[data-rubrika="Shëndetësi"] { --rubrika: #0f8b8d; }
+[data-rubrika="Teknologji"] { --rubrika: var(--vjollce); }
+[data-rubrika="Kulturë"]    { --rubrika: var(--ari); }
+[data-rubrika="Kronikë"]    { --rubrika: var(--boja-2); }
+[data-rubrika="Rozë"]       { --rubrika: var(--roze); }
+[data-rubrika="Horoskop"]   { --rubrika: var(--vjollce); }
+
+/* -------------------------------------------------------------------------
+   2. BAZAT
+   ------------------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  color: var(--boja);
+  background:
+    radial-gradient(1200px 500px at 50% -200px, color-mix(in srgb, var(--ari) 10%, transparent), transparent 70%),
+    var(--letra);
+  font: 400 16px/1.6 var(--shkronja-tekst);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--kuqe); outline-offset: 2px; border-radius: 4px; }
+[hidden] { display: none !important; }
+
+/* Lidhja "Kalo te përmbajtja": e dukshme vetëm kur fokusohet me tastierë */
+.kalo {
+  position: absolute; left: 12px; top: -60px; z-index: 50;
+  background: var(--boja); color: var(--letra); padding: 8px 14px; border-radius: 8px;
+}
+.kalo:focus { top: 12px; }
+
+/* Butonat e përbashkët */
+.buton {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  min-height: 42px; padding: 8px 16px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--boja); background: var(--boja); color: var(--letra); font-weight: 600;
+  transition: transform .15s ease, background-color .15s ease;
+}
+.buton:hover { transform: translateY(-1px); }
+.buton:disabled { opacity: .45; cursor: default; transform: none; }
+.buton--dyte { background: transparent; color: var(--boja); border-color: var(--vija); }
+
+/* Grup butonash si "segmente" (vendi, niveli i sudokut) */
+.segmente { display: inline-flex; padding: 3px; gap: 2px; border-radius: 999px; background: var(--letra-3); }
+.segmente button {
+  border: 0; background: none; cursor: pointer; border-radius: 999px;
+  padding: 6px 14px; min-height: 36px; font-size: .9rem; font-weight: 600; color: var(--boja-2);
+}
+.segmente button[aria-pressed="true"] { background: var(--letra-2); color: var(--boja); box-shadow: var(--hije); }
+
+.bosh { color: var(--boja-2); padding: 40px 0; text-align: center; }
+
+/* -------------------------------------------------------------------------
+   3. KOKA E GAZETËS DHE MENUJA
+   ------------------------------------------------------------------------- */
+.koka { max-width: var(--gjeresia); margin: 0 auto; padding: 0 20px; text-align: center; }
+
+.koka__shiriti {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  padding: 10px 0; font-size: .8rem; color: var(--boja-2);
+  border-bottom: 1px solid var(--vija);
+}
+.koka__hapesire { flex: 1; }
+.koka__tema {
+  width: 34px; height: 34px; border-radius: 50%; cursor: pointer;
+  border: 1px solid var(--vija); background: var(--letra-2); font-size: 1rem; line-height: 1;
+}
+
+/* Emri i gazetës: i madh, me shkronja klasike */
+.koka__emri { display: inline-flex; align-items: baseline; gap: .25em; margin-top: 18px; text-decoration: none; }
+.koka__lajmetari {
+  font: 900 clamp(2.9rem, 10vw, 6.4rem)/0.95 var(--shkronja-tituj);
+  letter-spacing: -0.02em;
+}
+.koka__alks {
+  font: 800 clamp(1.1rem, 3.4vw, 2.1rem)/1 var(--shkronja-tituj);
+  color: var(--kuqe); letter-spacing: .04em;
+}
+.koka__alks i { color: var(--ari); font-style: normal; }
+/* Në faqet e brendshme (jo Ballina) koka zvogëlohet, që përmbajtja të duket menjëherë */
+body.e-brendshme .koka__emri { margin-top: 10px; }
+body.e-brendshme .koka__lajmetari { font-size: clamp(2rem, 6vw, 3rem); }
+body.e-brendshme .koka__alks { font-size: clamp(.9rem, 2.2vw, 1.2rem); }
+body.e-brendshme .koka__motoja { font-size: 0; margin: 0; }
+body.e-brendshme .koka__motoja::after { margin-top: 10px; }
+body.e-brendshme .shiriti { display: none; }
+.koka__motoja { margin: 8px 0 0; font-style: italic; font-family: var(--shkronja-tituj); color: var(--boja-2); }
+
+/* Vija e dyfishtë poshtë emrit, si te gazetat */
+.koka__motoja::after {
+  content: ""; display: block; height: 5px; margin-top: 16px;
+  border-top: 3px solid var(--boja); border-bottom: 1px solid var(--boja);
+  transform-origin: center;
+}
+
+.menuja {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; justify-content: center; gap: 4px; flex-wrap: wrap;
+  padding: 6px 0; margin: 0 -20px;
+  background: color-mix(in srgb, var(--letra) 88%, transparent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--vija);
+}
+.menuja a {
+  position: relative; padding: 10px 14px; text-decoration: none;
+  font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--boja-2);
+}
+.menuja a::after {          /* vija e kuqe poshtë skedës aktive */
+  content: ""; position: absolute; left: 14px; right: 14px; bottom: 4px; height: 2px;
+  background: var(--kuqe); transform: scaleX(0); transition: transform .25s ease;
+}
+.menuja a:hover, .menuja a[aria-current="page"] { color: var(--boja); }
+.menuja a[aria-current="page"]::after, .menuja a:hover::after { transform: scaleX(1); }
+
+/* -------------------------------------------------------------------------
+   4. SHIRITI "TË FUNDIT"
+   ------------------------------------------------------------------------- */
+.shiriti {
+  display: flex; align-items: stretch; max-width: var(--gjeresia); margin: 14px auto 0;
+  background: #17161a; color: #f1ece2;              /* gjithmonë i errët, si shiriti i lajmeve në TV */ border-radius: 10px; overflow: hidden;
+  font-size: .88rem;
+}
+.shiriti__etiketa {
+  flex: none; display: flex; align-items: center; padding: 0 14px;
+  background: var(--kuqe); color: #fff; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; font-size: .72rem;
+}
+.shiriti__dritarja { overflow: hidden; flex: 1; mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); }
+.shiriti__pista { display: flex; width: max-content; animation: shiriti var(--kohezgjatja, 60s) linear infinite; }
+.shiriti:hover .shiriti__pista, .shiriti:focus-within .shiriti__pista { animation-play-state: paused; }
+.shiriti__lista { display: flex; list-style: none; margin: 0; padding: 0; }
+.shiriti__lista li { padding: 10px 22px; white-space: nowrap; border-right: 1px solid rgb(255 255 255 / 15%); }
+.shiriti__lista a { color: inherit; text-decoration: none; }
+.shiriti__lista a:hover { text-decoration: underline; }
+.shiriti__burimi { color: var(--ari); font-weight: 700; margin-right: 8px; font-size: .78rem; }
+.shiriti--statik .shiriti__pista { animation: none; overflow-x: auto; }
+@keyframes shiriti { to { transform: translateX(-50%); } }
+
+/* -------------------------------------------------------------------------
+   5. KOKAT E FAQEVE DHE FILTRAT
+   ------------------------------------------------------------------------- */
+.pamja { max-width: var(--gjeresia); margin: 0 auto; padding: 8px 20px 56px; outline: none; }
+
+.seksion-koka { padding: 34px 0 18px; text-align: center; }
+.seksion-koka__mbititull { margin: 0; font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--kuqe); }
+.seksion-koka__titulli { margin: 6px 0; font: 900 clamp(2.2rem, 6vw, 3.6rem)/1.05 var(--shkronja-tituj); letter-spacing: -0.01em; }
+.seksion-koka__pershkrimi { margin: 0 auto; max-width: 60ch; color: var(--boja-2); }
+.seksion-koka--roze .seksion-koka__mbititull { color: var(--roze); }
+.seksion-koka--horoskop .seksion-koka__mbititull { color: var(--vjollce); }
+
+.filtrat {
+  display: flex; flex-wrap: wrap; align-items: end; gap: 12px 16px;
+  padding: 14px 16px; margin-bottom: 8px; border-radius: var(--rrezja);
+  background: var(--letra-2); border: 1px solid var(--vija); box-shadow: var(--hije);
+}
+.filtrat__fusha { display: flex; flex-direction: column; gap: 3px; font-size: .75rem; font-weight: 600; color: var(--boja-2); }
+.filtrat__fusha select, .filtrat__fusha input, .loje input {
+  min-height: 40px; padding: 7px 10px; border-radius: 10px;
+  border: 1px solid var(--vija); background: var(--letra); font-size: .95rem; color: var(--boja);
+}
+.filtrat__kerko { flex: 1 1 220px; }
+
+/* Titulli i një dite në lista */
+.dita { margin-top: 30px; }
+.dita__titulli {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+  margin: 0 0 14px; padding-bottom: 8px; border-bottom: 2px solid var(--boja);
+  font: 800 1.25rem/1.2 var(--shkronja-tituj);
+}
+.dita__numri { font: 600 .78rem var(--shkronja-tekst); color: var(--boja-2); }
+.dita__rrjeta { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+
+/* -------------------------------------------------------------------------
+   6. KARTAT E LAJMEVE DHE BALLINA
+   ------------------------------------------------------------------------- */
+.lajm {
+  position: relative; display: flex; flex-direction: column; gap: 6px;
+  padding: 18px; border-radius: var(--rrezja);
+  background: var(--letra-2); border: 1px solid var(--vija); box-shadow: var(--hije);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.lajm:hover { transform: translateY(-2px); }
+/* Shiriti i ngjyrës sipër kartës: e kuqe për Shqipërinë, blu për Kosovën, rozë për VIP */
+.lajm::before {
+  content: ""; position: absolute; inset: -1px -1px auto; height: 4px; border-radius: var(--rrezja) var(--rrezja) 0 0;
+  background: var(--kuqe);
+}
+.lajm[data-vendi="Kosovë"]::before { background: linear-gradient(90deg, var(--blu) 70%, var(--ari)); }
+.lajm[data-rubrika="Rozë"]::before { background: linear-gradient(90deg, var(--roze), var(--vjollce)); }
+
+.lajm__etiketa { display: flex; gap: 10px; margin: 0; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.lajm__rubrika { color: var(--rubrika, var(--kuqe)); }
+.lajm__vendi { color: var(--boja-2); }
+.lajm__titulli { margin: 0; font: 700 1.2rem/1.3 var(--shkronja-tituj); }
+.lajm__titulli a { text-decoration: none; background-image: linear-gradient(currentColor, currentColor); background-size: 0 1px; background-repeat: no-repeat; background-position: 0 100%; transition: background-size .3s ease; }
+.lajm__titulli a:hover { background-size: 100% 1px; }
+.lajm__permbledhja { margin: 0; color: var(--boja-2); }
+.lajm__burimi { display: flex; justify-content: space-between; gap: 10px; margin: auto 0 0; padding-top: 6px; font-size: .82rem; font-weight: 600; color: var(--boja-2); }
+.lajm__lexo { color: var(--kuqe); text-decoration: none; white-space: nowrap; }
+.lajm__lexo:hover { text-decoration: underline; }
+
+/* Kompakte: vetëm titulli, si lista në kolona */
+.lajm--kompakte { padding: 12px 0; border: 0; border-bottom: 1px solid var(--vija); border-radius: 0; background: none; box-shadow: none; }
+.lajm--kompakte::before { display: none; }
+.lajm--kompakte:hover { transform: none; }
+.lajm--kompakte .lajm__titulli { font-size: 1.05rem; }
+
+/* Faqja e parë: lajmi kryesor i madh + kolona anësore */
+.faqja-pare { padding-top: 26px; }
+.faqja-pare__data {
+  margin: 0 0 14px; font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--kuqe);
+  display: flex; align-items: center; gap: 12px;
+}
+.faqja-pare__data::after { content: ""; flex: 1; height: 1px; background: var(--vija); }
+.faqja-pare__rrjeta { display: grid; gap: 22px; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); align-items: start; }
+/* Lajmi kryesor qëndron në vend ndërsa lexuesi shfleton anësoret */
+.faqja-pare__rrjeta > .lajm--kryesore { position: sticky; top: 64px; }
+.faqja-pare__anesore { display: grid; gap: 14px; align-content: start; }
+.faqja-pare__anesore .lajm__permbledhja { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+.lajm--kryesore {
+  padding: clamp(22px, 4vw, 40px); gap: 14px;
+  background:
+    radial-gradient(600px 260px at 100% 0%, color-mix(in srgb, var(--kuqe) 9%, transparent), transparent 70%),
+    var(--letra-2);
+}
+.lajm--kryesore .lajm__titulli { font: 900 clamp(1.9rem, 4.4vw, 3.3rem)/1.08 var(--shkronja-tituj); letter-spacing: -0.015em; }
+.lajm--kryesore .lajm__permbledhja { font-size: 1.12rem; line-height: 1.7; color: var(--boja); }
+/* Shkronja e parë e madhe ("inicialja"), si në gazetat e vjetra */
+.lajm--kryesore .lajm__permbledhja::first-letter {
+  float: left; margin: 6px 10px 0 0; font: 900 3.6em/0.8 var(--shkronja-tituj); color: var(--kuqe);
+}
+
+/* Kolonat Shqipëri / Kosovë */
+.kolonat { display: grid; gap: 28px; grid-template-columns: 1fr 1fr; margin-top: 36px; }
+.kolona { padding: 4px 0; }
+
+/* Blloqet e Ballinës */
+.blloku { margin-top: 44px; }
+.blloku__koka { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 8px; margin-bottom: 16px; border-bottom: 2px solid var(--boja); }
+.blloku__titulli { margin: 0; font: 900 1.6rem/1.1 var(--shkronja-tituj); }
+.blloku__linku { font-size: .85rem; font-weight: 700; color: var(--kuqe); text-decoration: none; white-space: nowrap; }
+.blloku__linku:hover { text-decoration: underline; }
+.kolona--al .blloku__koka { border-color: var(--kuqe); }
+.kolona--ks .blloku__koka { border-color: var(--blu); }
+.kolona--ks .blloku__titulli { color: var(--blu); }
+.kolona--al .blloku__titulli { color: var(--kuqe); }
+
+/* Kartat e rubrikave */
+.rubrikat { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
+.rubrika-karta {
+  display: flex; justify-content: space-between; align-items: center; padding: 14px 16px;
+  border-radius: 12px; text-decoration: none; font-weight: 700;
+  background: color-mix(in srgb, var(--rubrika) 9%, var(--letra-2));
+  border: 1px solid color-mix(in srgb, var(--rubrika) 25%, var(--vija));
+  transition: transform .15s ease;
+}
+.rubrika-karta:hover { transform: translateY(-2px); }
+.rubrika-karta__numri { font: 800 1.3rem var(--shkronja-tituj); color: var(--rubrika); }
+
+.lista-linqesh { padding-left: 18px; }
+.lista-linqesh a { color: var(--kuqe); }
+
+/* -------------------------------------------------------------------------
+   7. HOROSKOPI
+   ------------------------------------------------------------------------- */
+.zodiak { display: flex; flex-wrap: wrap; align-items: end; gap: 14px; margin-bottom: 18px; }
+.zodiak__rrota { display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px 8px; scrollbar-width: thin; }
+.zodiak__butoni {
+  flex: none; display: flex; flex-direction: column; align-items: center; gap: 4px;
+  min-width: 70px; padding: 8px 6px; border-radius: 14px; cursor: pointer; text-decoration: none;
+  border: 1px solid var(--vija); background: var(--letra-2);
+  transition: transform .15s ease, border-color .15s ease;
+}
+.zodiak__butoni:hover { transform: translateY(-2px); border-color: var(--vjollce); }
+.zodiak__butoni[aria-pressed="true"] { border-color: var(--vjollce); background: color-mix(in srgb, var(--vjollce) 12%, var(--letra-2)); }
+.zodiak__simboli {
+  display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
+  font-size: 1.35rem; line-height: 1; color: var(--vjollce);
+  background: color-mix(in srgb, var(--vjollce) 12%, transparent);
+}
+.zodiak__emri { font-size: .72rem; font-weight: 600; color: var(--boja-2); }
+.zodiak__rrota--ballina { display: grid; grid-template-columns: repeat(6, 1fr); overflow: visible; }
+
+.horoskop-rrjeta { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+.horoskop-rrjeta--nje { grid-template-columns: minmax(0, 640px); justify-content: center; }
+
+.shenja {
+  display: flex; flex-direction: column; gap: 12px; padding: 20px; border-radius: var(--rrezja);
+  background:
+    radial-gradient(400px 160px at 0% 0%, color-mix(in srgb, var(--vjollce) 10%, transparent), transparent 70%),
+    var(--letra-2);
+  border: 1px solid var(--vija); box-shadow: var(--hije);
+}
+.shenja__koka { display: flex; align-items: center; gap: 14px; }
+.shenja__simboli {
+  flex: none; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%;
+  font-size: 1.8rem; line-height: 1; color: #fff;
+  background: linear-gradient(135deg, var(--vjollce), var(--roze));
+}
+.shenja[data-elementi="Zjarr"] .shenja__simboli { background: linear-gradient(135deg, #f97316, var(--kuqe)); }
+.shenja[data-elementi="Tokë"]  .shenja__simboli { background: linear-gradient(135deg, #84a75a, var(--jeshile)); }
+.shenja[data-elementi="Ajër"]  .shenja__simboli { background: linear-gradient(135deg, #38bdf8, var(--blu)); }
+.shenja[data-elementi="Ujë"]   .shenja__simboli { background: linear-gradient(135deg, #2dd4bf, #0e7490); }
+.shenja__emri { margin: 0; font: 800 1.35rem/1.1 var(--shkronja-tituj); }
+.shenja__datat { margin: 2px 0 0; font-size: .8rem; color: var(--boja-2); }
+.shenja__pergjithshme { margin: 0; }
+.shenja__fushat { margin: 0; display: grid; gap: 10px; }
+.shenja__fusha dt { display: flex; justify-content: space-between; font-size: .85rem; font-weight: 700; }
+.shenja__fusha dd { margin: 2px 0 0; font-size: .92rem; color: var(--boja-2); }
+.yjet { color: var(--ari); letter-spacing: .1em; }
+.shenja__keshilla { margin: 0; padding: 10px 12px; border-radius: 10px; font-size: .92rem; background: color-mix(in srgb, var(--vjollce) 9%, transparent); }
+.shenja__fati { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; font-size: .8rem; color: var(--boja-2); }
+.shenja__fati li { padding: 3px 10px; border: 1px solid var(--vija); border-radius: 999px; }
+.shenja__fati b { color: var(--boja); }
+
+/* -------------------------------------------------------------------------
+   8. LOJËRAT
+   ------------------------------------------------------------------------- */
+/* Kartat e lojërave (te faqja e lojërave dhe te Ballina) */
+.lojera-rrjeta { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+.loje-karta {
+  --nga: var(--kuqe); --deri: #7a0d1f;
+  position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 4px;
+  min-height: 190px; padding: 20px; border-radius: 18px; text-decoration: none; color: #fff;
+  background: linear-gradient(140deg, var(--nga), var(--deri));
+  box-shadow: var(--hije); isolation: isolate;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.loje-karta:hover { transform: translateY(-4px) rotate(-0.4deg); }
+.loje-karta--fjalekerkim { --nga: #1f4aa8; --deri: #0b1f4d; }
+.loje-karta--gjeegjeza   { --nga: #6a44c2; --deri: #2b1660; }
+.loje-karta--kuizi       { --nga: #b8901c; --deri: #6b4e05; }
+/* Ikona e madhe, gjysmë e dukshme, në qoshe: e bën kartën si kopertinë */
+.loje-karta__ikona {
+  position: absolute; right: -6px; bottom: -34px; z-index: -1;
+  font: 900 9rem/1 var(--shkronja-tituj); opacity: .18;
+  transition: transform .4s ease;
+}
+.loje-karta:hover .loje-karta__ikona { transform: scale(1.08) rotate(-6deg); }
+.loje-karta__emri { font: 900 1.6rem/1.1 var(--shkronja-tituj); }
+.loje-karta__pershkrimi { font-size: .9rem; opacity: .9; max-width: 22ch; }
+.loje-karta__statusi {
+  margin-top: auto; align-self: flex-start; padding: 5px 12px; border-radius: 999px;
+  font-size: .8rem; font-weight: 700; background: rgb(255 255 255 / 18%); backdrop-filter: blur(4px);
+}
+.loje-karta.zgjidhur .loje-karta__statusi { background: #fff; color: var(--deri); }
+
+/* Navigimi mes lojërave */
+.lojera-nav { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; margin-bottom: 18px; }
+.lojera-nav a { padding: 7px 14px; border-radius: 999px; font-size: .85rem; font-weight: 600; text-decoration: none; border: 1px solid var(--vija); background: var(--letra-2); }
+.lojera-nav a[aria-current="page"] { background: var(--boja); color: var(--letra); border-color: var(--boja); }
+
+/* Kutia e lojës */
+.loje {
+  max-width: 760px; margin: 0 auto; padding: clamp(16px, 3vw, 28px); border-radius: 20px;
+  background: var(--letra-2); border: 1px solid var(--vija); box-shadow: var(--hije);
+  transition: border-color .3s ease, box-shadow .3s ease;
+}
+.loje--fituar { border-color: var(--ari); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ari) 30%, transparent), var(--hije); }
+.loje__shiriti { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+.loje__ora { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--boja-2); }
+.loje__mesazh { margin: 14px 0 0; color: var(--boja-2); text-align: center; }
+.loje--fituar .loje__mesazh { color: var(--boja); font-weight: 700; }
+.loje__veprimet { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.loje__tema { margin: 0 0 14px; text-align: center; font: 700 1.15rem var(--shkronja-tituj); }
+
+/* --- Sudoku --- */
+.sudoku {
+  display: grid; grid-template-columns: repeat(9, 1fr); max-width: 470px; margin: 0 auto;
+  aspect-ratio: 1; border: 2.5px solid var(--boja); border-radius: 8px; overflow: hidden;
+}
+/* Vija të holla mes qelizave; vija të trasha (klasat kufi-*) mes kutive 3×3 */
+.sudoku__qeliza {
+  border: 0; border-right: 1px solid var(--vija); border-bottom: 1px solid var(--vija);
+  padding: 0; background: var(--letra-2); cursor: pointer;
+  font: 600 clamp(1.05rem, 4.6vw, 1.55rem)/1 var(--shkronja-tekst); color: var(--blu);
+  transition: background-color .12s ease;
+}
+.sudoku__qeliza:nth-child(9n) { border-right: 0; }
+.sudoku__qeliza:nth-child(n+73) { border-bottom: 0; }
+.sudoku__qeliza.kufi-djathtas { border-right: 2.5px solid var(--boja); }
+.sudoku__qeliza.kufi-poshte { border-bottom: 2.5px solid var(--boja); }
+.sudoku__qeliza.dhene { color: var(--boja); font-weight: 800; }
+.sudoku__qeliza.lidhur { background: color-mix(in srgb, var(--blu) 8%, var(--letra-2)); }
+.sudoku__qeliza.njejte { background: color-mix(in srgb, var(--blu) 20%, var(--letra-2)); }
+.sudoku__qeliza.zgjedhur { background: color-mix(in srgb, var(--ari) 40%, var(--letra-2)); }
+.sudoku__qeliza.konflikt { color: var(--kuqe); background: color-mix(in srgb, var(--kuqe) 14%, var(--letra-2)); }
+.loje--fituar .sudoku__qeliza { animation: vale .6s ease both; }
+
+.sudoku__tastiera { display: grid; grid-template-columns: repeat(10, 1fr); gap: 6px; max-width: 470px; margin: 14px auto 0; }
+.sudoku__tastiera button {
+  min-height: 46px; border-radius: 10px; cursor: pointer; font-weight: 700; font-size: 1.1rem;
+  border: 1px solid var(--vija); background: var(--letra); transition: transform .1s ease;
+}
+.sudoku__tastiera button:active { transform: scale(.94); }
+.sudoku__fshi { font-size: .8rem !important; }
+
+/* --- Fjalëkërkim --- */
+.fjalekerkim__mbajtesi { display: grid; gap: 18px; grid-template-columns: minmax(0, 1fr) 200px; align-items: start; }
+.fjalekerkim {
+  display: grid; grid-template-columns: repeat(var(--n), 1fr); gap: 2px; aspect-ratio: 1;
+  touch-action: none; user-select: none; -webkit-user-select: none;
+}
+.fjalekerkim__qeliza {
+  display: grid; place-items: center; border-radius: 6px; cursor: pointer;
+  font: 700 clamp(.8rem, 3.4vw, 1.15rem)/1 var(--shkronja-tekst);
+  transition: background-color .12s ease, color .12s ease;
+}
+.fjalekerkim__qeliza:hover { background: var(--letra-3); }
+.fjalekerkim__qeliza.perzgjedhur { background: var(--boja); color: var(--letra); }
+.fjalekerkim__qeliza.gjetur { color: #fff; }
+.ngjyra-0 { background: var(--kuqe) !important; }
+.ngjyra-1 { background: var(--blu) !important; }
+.ngjyra-2 { background: var(--jeshile) !important; }
+.ngjyra-3 { background: var(--vjollce) !important; }
+.ngjyra-4 { background: #d97706 !important; }
+.ngjyra-5 { background: var(--roze) !important; }
+.fjalekerkim__lista { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.fjalekerkim__lista li { padding: 6px 10px; border-radius: 8px; background: var(--letra); font-weight: 700; letter-spacing: .04em; font-size: .9rem; }
+.fjalekerkim__lista li.gjetur { text-decoration: line-through; color: var(--boja-2); opacity: .7; }
+
+/* --- Gjëegjëza --- */
+.gjeegjeza { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; counter-reset: gj; }
+.gjeegjeza__karta {
+  position: relative; padding: 18px 18px 16px 62px; border-radius: 14px; background: var(--letra); border: 1px solid var(--vija);
+  counter-increment: gj;
+}
+.gjeegjeza__karta::before {        /* numri i madh i gjëegjëzës */
+  content: counter(gj); position: absolute; left: 16px; top: 12px;
+  font: 900 2.2rem/1 var(--shkronja-tituj); color: var(--vjollce);
+}
+.gjeegjeza__pyetja { margin: 0 0 12px; font: 600 1.15rem/1.45 var(--shkronja-tituj); font-style: italic; }
+.gjeegjeza__formulari { display: flex; flex-wrap: wrap; gap: 8px; }
+.gjeegjeza__formulari input { flex: 1 1 180px; }
+.gjeegjeza__reagimi { margin: 8px 0 0; min-height: 1.4em; font-weight: 600; color: var(--boja-2); }
+.gjeegjeza__karta[data-gjendja="zgjidhur"] { border-color: var(--jeshile); }
+.gjeegjeza__karta[data-gjendja="zgjidhur"] .gjeegjeza__reagimi { color: var(--jeshile); }
+.dridhje { animation: dridhje .4s ease; }
+
+/* --- Kuizi --- */
+.kuizi__progresi { display: flex; justify-content: center; gap: 8px; margin-bottom: 18px; }
+.kuizi__progresi span { width: 34px; height: 6px; border-radius: 999px; background: var(--vija); }
+.kuizi__progresi .aktuale { background: var(--boja); }
+.kuizi__progresi .sakte { background: var(--jeshile); }
+.kuizi__progresi .gabim { background: var(--kuqe); }
+.kuizi__zona { text-align: center; }
+.kuizi__numri { margin: 0; font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ari); }
+.kuizi__pyetja { margin: 8px auto 18px; max-width: 30ch; font: 800 clamp(1.3rem, 3.4vw, 1.75rem)/1.25 var(--shkronja-tituj); }
+.kuizi__opsionet { display: grid; gap: 10px; grid-template-columns: 1fr 1fr; text-align: left; }
+.kuizi__opsioni {
+  min-height: 56px; padding: 12px 16px; border-radius: 12px; cursor: pointer; font-weight: 600;
+  border: 1.5px solid var(--vija); background: var(--letra); text-align: left;
+  transition: border-color .15s ease, transform .15s ease;
+}
+.kuizi__opsioni:hover:not(:disabled) { border-color: var(--boja); transform: translateY(-1px); }
+.kuizi__opsioni.sakte { border-color: var(--jeshile); background: color-mix(in srgb, var(--jeshile) 14%, var(--letra)); }
+.kuizi__opsioni.gabim { border-color: var(--kuqe); background: color-mix(in srgb, var(--kuqe) 12%, var(--letra)); }
+.kuizi__opsioni:disabled { cursor: default; }
+.kuizi__reagimi { font-weight: 800; margin: 16px 0 4px; }
+.kuizi__reagimi.sakte { color: var(--jeshile); }
+.kuizi__reagimi.gabim { color: var(--kuqe); }
+.kuizi__shpjegimi { margin: 0 auto 14px; max-width: 50ch; color: var(--boja-2); }
+.kuizi__rezultati { margin: 6px 0 0; font: 900 4.5rem/1 var(--shkronja-tituj); color: var(--ari); }
+.kuizi__vleresimi { margin: 6px 0 0; font: 700 1.2rem var(--shkronja-tituj); }
+
+/* Fundi i faqes */
+.fundi {
+  max-width: var(--gjeresia); margin: 0 auto; padding: 28px 20px 40px; text-align: center;
+  border-top: 3px double var(--boja); color: var(--boja-2); font-size: .85rem;
+}
+.fundi p { max-width: 70ch; margin: 8px auto 0; }
+.fundi__emri { font: 900 1.6rem var(--shkronja-tituj); color: var(--boja); }
+.fundi__emri span { color: var(--kuqe); font-size: .7em; }
+
+/* -------------------------------------------------------------------------
+   9. ANIMACIONET
+   Të gjitha çaktivizohen kur lexuesi ka zgjedhur "më pak lëvizje" në sistem.
+   ------------------------------------------------------------------------- */
+/* Hapja e faqes: emri ngrihet, vija e dyfishtë "vizatohet" nga mesi */
+body.gati .koka__emri { animation: ngritje .9s cubic-bezier(.2, .7, .2, 1) both; }
+body.gati .koka__motoja { animation: ngritje .9s .15s cubic-bezier(.2, .7, .2, 1) both; }
+body.gati .koka__motoja::after { animation: vije 1s .35s cubic-bezier(.6, 0, .2, 1) both; }
+body.gati .shiriti { animation: ngritje .7s .5s ease both; }
+
+/* Çdo faqe e re: blloqet hyjnë njëri pas tjetrit */
+.pamja.hyrje > * { animation: ngritje .6s cubic-bezier(.2, .7, .2, 1) both; }
+.pamja.hyrje > *:nth-child(2) { animation-delay: .07s; }
+.pamja.hyrje > *:nth-child(3) { animation-delay: .14s; }
+.pamja.hyrje > *:nth-child(4) { animation-delay: .21s; }
+.pamja.hyrje > *:nth-child(5) { animation-delay: .28s; }
+.pamja.hyrje > *:nth-child(n+6) { animation-delay: .35s; }
+
+@keyframes ngritje { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes vije { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes vale { 50% { background: color-mix(in srgb, var(--ari) 45%, var(--letra-2)); } }
+@keyframes dridhje { 20%, 60% { transform: translateX(-6px); } 40%, 80% { transform: translateX(6px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* -------------------------------------------------------------------------
+   10. EKRANET E VOGLA
+   ------------------------------------------------------------------------- */
+@media (max-width: 860px) {
+  .faqja-pare__rrjeta, .kolonat { grid-template-columns: 1fr; }
+  .zodiak__rrota--ballina { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 560px) {
+  .koka, .pamja { padding-left: 16px; padding-right: 16px; }
+  .menuja { margin: 0 -16px; flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; padding: 4px 8px; scrollbar-width: none; }
+  .menuja { justify-content: space-between; }
+  .menuja a { flex: none; padding: 10px 6px; font-size: .7rem; letter-spacing: .04em; }
+  .menuja a::after { left: 6px; right: 6px; }
+  .koka__perditesuar { display: none; }
+  .shiriti { margin: 12px 16px 0; }
+  .dita__rrjeta, .horoskop-rrjeta { grid-template-columns: 1fr; }
+  .zodiak__rrota--ballina { grid-template-columns: repeat(3, 1fr); }
+  .fjalekerkim__mbajtesi { grid-template-columns: 1fr; }
+  .fjalekerkim__lista { grid-template-columns: 1fr 1fr; }
+  .kuizi__opsionet { grid-template-columns: 1fr; }
+  .sudoku__tastiera { grid-template-columns: repeat(5, 1fr); }
+  .gjeegjeza__karta { padding-left: 50px; }
+  .lajm--kryesore .lajm__permbledhja::first-letter { font-size: 3em; }
+}

@@ -1,0 +1,76 @@
+<!doctype html>
+<!--
+  index.html — Skeleti i faqes.
+  Përmbajtja e çdo faqeje (Ballina, Lajmet, Horoskopi, Lojëra) ndërtohet nga JavaScript-i
+  brenda <main id="pamja">. Këtu janë vetëm pjesët që nuk ndryshojnë: koka e gazetës,
+  menuja, shiriti i lajmeve dhe fundi i faqes.
+-->
+<html lang="sq">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lajmëtari AL·KS</title>
+  <meta name="description" content="Lajmet e ditës nga Shqipëria dhe Kosova, horoskopi dhe lojëra ditore: sudoku, fjalëkërkim, gjëegjëza dhe kuiz.">
+  <!-- Ngjyra e shiritit të shfletuesit në telefon, sipas temës -->
+  <meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14161c" media="(prefers-color-scheme: dark)">
+
+  <!-- Shkronjat: Playfair Display për titujt (stil gazete), Inter për tekstin -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,600&display=swap">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- type="module" lejon import/export mes skedarëve JS; ekzekutohet pasi ndërtohet HTML-ja -->
+  <script type="module" src="assets/js/main.js"></script>
+</head>
+<body>
+  <!-- Lidhje e fshehur për tastierën: kalon direkt te përmbajtja -->
+  <a class="kalo" href="#pamja">Kalo te përmbajtja</a>
+
+  <!-- KOKA E GAZETËS -->
+  <header class="koka">
+    <!-- Rreshti i sipërm: data, numri i botimit, tema -->
+    <div class="koka__shiriti">
+      <span id="data-sot"></span>
+      <span class="koka__ndares" aria-hidden="true">·</span>
+      <span id="botimi"></span>
+      <span class="koka__hapesire"></span>
+      <span id="perditesuar" class="koka__perditesuar"></span>
+      <button id="ndrysho-temen" class="koka__tema" type="button">☾</button>
+    </div>
+
+    <!-- Emri i gazetës -->
+    <a class="koka__emri" href="#ballina" aria-label="Lajmëtari AL·KS, ballina">
+      <span class="koka__lajmetari">Lajmëtari</span>
+      <span class="koka__alks">AL<i>·</i>KS</span>
+    </a>
+    <p class="koka__motoja">Tiranë · Prishtinë — lajmet e ditës, me burimin gjithmonë një klikim larg</p>
+
+    <!-- Menuja kryesore; data-rruga përputhet me adresën pas "#" -->
+    <nav class="menuja" aria-label="Seksionet">
+      <a href="#ballina" data-rruga="ballina">Ballina</a>
+      <a href="#lajmet" data-rruga="lajmet">Lajmet</a>
+      <a href="#roze" data-rruga="roze">Rozë · VIP</a>
+      <a href="#horoskopi" data-rruga="horoskopi">Horoskopi</a>
+      <a href="#lojera" data-rruga="lojera">Lojëra</a>
+    </nav>
+  </header>
+
+  <!-- SHIRITI "TË FUNDIT": titujt lëvizin horizontalisht (main.js e mbush) -->
+  <section id="shiriti" class="shiriti" aria-label="Të fundit">
+    <span class="shiriti__etiketa">Të fundit</span>
+    <div class="shiriti__dritarja"><div class="shiriti__pista"></div></div>
+  </section>
+
+  <!-- PËRMBAJTJA: këtu vizatohet faqja aktuale -->
+  <main id="pamja" class="pamja" tabindex="-1">
+    <p class="bosh">Po ngarkohet botimi i sotëm…</p>
+  </main>
+
+  <footer class="fundi">
+    <p class="fundi__emri">Lajmëtari <span>AL·KS</span></p>
+    <p>Lajmet mblidhen automatikisht nga feed-et RSS të mediave. Titulli është i medias, përmbledhja përbëhet nga fjali të artikullit dhe çdo lajm të çon te burimi origjinal. Horoskopi dhe lojërat gjenerohen nga kodi. Asnjë përmbajtje nuk shkruhet nga inteligjenca artificiale.</p>
+  </footer>
+</body>
+</html>

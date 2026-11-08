@@ -1,0 +1,26 @@
+{
+  "_shpjegim": "Klasifikimi në rubrika bëhet me fjalë kyçe, pa AI. Skripti kërkon këto fjalë (pa shkronja të mëdha dhe pa ë/ç, p.sh. 'shendet' kap edhe 'shëndet') në titull, në kategoritë e RSS-së dhe në tekst. Rubrika me më shumë pikë fiton; titulli dhe kategoria e RSS-së vlejnë më shumë se teksti. Shto ose hiq fjalë sipas nevojës.",
+
+  "parazgjedhur": "Kronikë",
+
+  "rubrikat": {
+    "Politikë":    ["kuvend", "parlament", "deputet", "ministr", "kryeministr", "president", "qeveri", "opozit", "zgjedhje", "partia", "protest", "ambasador", "diplomaci", "integrim", "bashkimi evropian", "politik", "pd-", "ps ", "vetevendosje", "ldk", "pdk", "aak"],
+    "Ekonomi":     ["ekonomi", "biznes", "buxhet", "taks", "tatim", "tvsh", "cmim", "inflacion", "eksport", "import", "investim", "bank", "leke", "milione euro", "mije euro", "page", "pension", "turizem", "bujqesi", "fermer", "energji", "karburant", "punesim", "treg"],
+    "Sport":       ["sport", "futboll", "kombetarja", "ndeshje", "gol", "superliga", "kampionat", "lojtar", "trajner", "basketboll", "volejboll", "olimpi", "medalje", "champions league", "stadium", "futsall"],
+    "Shëndetësi":  ["shendet", "spital", "mjek", "pacient", "qsut", "semundj", "vaksin", "kirurg", "helmim", "infermier", "barna", "pediatri", "epidemi"],
+    "Teknologji":  ["teknologji", "digjital", "internet", "inteligjenc", "aplikacion", "kibernet", "softuer", "startup", "telefon", "it ", "e-albania", "dixhital"],
+    "Kulturë":     ["kulture", "teater", "teatri", "film", "festival", "koncert", "muze", "liber", "librit", "shkrimtar", "artist", "ekspozit", "muzik", "trashegimi", "opera", "balet", "kenge"],
+    "Kronikë":     ["polic", "arrest", "aksident", "zjarr", "vrasje", "plagos", "spak", "prokurori", "gjykat", "drog", "kontrabande", "hetim", "sekuestr"]
+  },
+
+  "rubrikat_e_vecanta": {
+    "_shpjegim": "Rubrika me seksion më vete dhe kuotë të veçantë (te burimet.json → rregullat), që nuk zënë vendin e lajmeve të zakonshme. Kontrollohen PARA rubrikave të tjera, në rendin që janë shkruar, por vetëm në titull dhe në kategoritë e RSS-së (jo në tekst), që një lajm politik që përmend p.sh. 'një artist' të mos përfundojë te Rozë.",
+    "Horoskop": ["horoskop", "shenjat e zodiakut", "zodiak", "yjet per sot", "parashikimi i yjeve"],
+    "Rozë": ["vip", "showbiz", "magazina", "lifestyle", "spektakel", "big brother", "bbvk", "perputhen", "kengetar", "kengetare", "reper", "aktore", "aktori", "influencer", "dasem", "dasma", "fejes", "shtatzen", "divorc", "romanc", "e dashura", "i dashuri", "partnerin", "partneren"]
+  },
+
+  "perjashto": {
+    "_shpjegim": "Lajmet që përmbajnë këto fjalë në titull nuk shtohen fare (moti, kursi i këmbimit, programet televizive, kuizet). Horoskopi dhe VIP-at tani kanë rubrikën e tyre më lart.",
+    "fjalet": ["parashikimi i motit", "moti sot", "kembimi valutor", "edicioni i lajmeve", "edicioni i mesdites", "kuiz"]
+  }
+}

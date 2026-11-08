@@ -1,0 +1,96 @@
+{
+  "_shpjegim": "Përmbajtja e lojërave. Çdo ditë faqja zgjedh prej këtej, me rastësi të kontrolluar sipas datës, ndaj të gjithë lexuesit marrin të njëjtat lojëra. Sudoku nuk ka nevojë për të dhëna: gjenerohet nga kodi. Shto pyetje, gjëegjëza ose fjalë të reja dhe ato hyjnë automatikisht në qarkullim.",
+
+  "gjeegjeza": {
+    "_shpjegim": "'pranohen' janë format e pranueshme të përgjigjes (pa ë/ç dhe pa shkronja të mëdha, krahasimi i normalizon vetë).",
+    "ne_dite": 3,
+    "lista": [
+      { "pyetja": "Kam një shtëpi të bardhë, pa dyer e pa dritare, e brenda ka një zemër të verdhë.", "pergjigja": "Veza", "pranohen": ["veza", "veze", "vezet"] },
+      { "pyetja": "Sa më shumë i heq, aq më e madhe bëhet.", "pergjigja": "Gropa", "pranohen": ["gropa", "grope"] },
+      { "pyetja": "Ka dhëmbë, por kurrë nuk kafshon.", "pergjigja": "Krehri", "pranohen": ["krehri", "kreher", "krehra"] },
+      { "pyetja": "Fluturon pa krahë dhe qan pa sy.", "pergjigja": "Reja", "pranohen": ["reja", "re", "retë", "ret"] },
+      { "pyetja": "Sa më shumë fshin, aq më i lagur bëhet.", "pergjigja": "Peshqiri", "pranohen": ["peshqiri", "peshqir"] },
+      { "pyetja": "Ka qafë, por nuk ka kokë.", "pergjigja": "Shishja", "pranohen": ["shishja", "shishe"] },
+      { "pyetja": "Ka shumë çelësa, por nuk hap asnjë derë.", "pergjigja": "Pianoja", "pranohen": ["pianoja", "piano"] },
+      { "pyetja": "Ka një sy, por nuk sheh asgjë.", "pergjigja": "Gjilpëra", "pranohen": ["gjilpera", "gjilpere"] },
+      { "pyetja": "Thyhet pa u prekur, sapo ia thua emrin.", "pergjigja": "Heshtja", "pranohen": ["heshtja", "heshtje"] },
+      { "pyetja": "Rritet kur ha dhe vdes kur pi.", "pergjigja": "Zjarri", "pranohen": ["zjarri", "zjarr"] },
+      { "pyetja": "Ka faqe, por nuk ka fytyrë.", "pergjigja": "Libri", "pranohen": ["libri", "liber", "fletorja", "fletore"] },
+      { "pyetja": "Gjithë ditën ecën, e prapë në vend qëndron.", "pergjigja": "Ora", "pranohen": ["ora", "ore"] },
+      { "pyetja": "Ka katër këmbë, por kurrë nuk ecën.", "pergjigja": "Tryeza", "pranohen": ["tryeza", "tavolina", "karrigia", "karrige", "tavoline", "tryeze"] },
+      { "pyetja": "Ngrihet në mëngjes e shtrihet në mbrëmje, por kurrë nuk fle në shtrat.", "pergjigja": "Dielli", "pranohen": ["dielli", "diell"] },
+      { "pyetja": "Natën dalin pa i thirrur, ditën humbasin pa i vjedhur.", "pergjigja": "Yjet", "pranohen": ["yjet", "yje", "ylli"] },
+      { "pyetja": "Ngjitet e zbret gjithë ditën, por nga vendi nuk lëviz.", "pergjigja": "Shkallët", "pranohen": ["shkallet", "shkalla", "shkalle"] },
+      { "pyetja": "Ka qytete pa shtëpi, pyje pa pemë dhe lumenj pa ujë.", "pergjigja": "Harta", "pranohen": ["harta", "harte"] },
+      { "pyetja": "Flet pa gojë dhe dëgjon pa veshë; në male të përsërit fjalën.", "pergjigja": "Jehona", "pranohen": ["jehona", "jehone", "eko"] },
+      { "pyetja": "Është yti, por të tjerët e përdorin më shumë se ti.", "pergjigja": "Emri", "pranohen": ["emri", "emer"] },
+      { "pyetja": "Ka kokë e ka bisht, por nuk ka trup.", "pergjigja": "Monedha", "pranohen": ["monedha", "monedhe", "pare", "paraja"] },
+      { "pyetja": "Hyn e thatë e del e lagur; sa më gjatë rri në ujë, aq më e fortë bëhet.", "pergjigja": "Qeskja e çajit", "pranohen": ["caji", "caj", "qeskja e cajit", "qeske caji"] },
+      { "pyetja": "Ka gjuhë, por nuk flet, dhe të shoqëron kudo që shkon.", "pergjigja": "Këpuca", "pranohen": ["kepuca", "kepuce", "kepucet"] },
+      { "pyetja": "Kur është e re, është e gjatë; sa më shumë jeton, aq më e shkurtër bëhet.", "pergjigja": "Qiriu", "pranohen": ["qiriu", "qiri"] },
+      { "pyetja": "Të ndjek kudo nën diell, por zhduket në errësirë.", "pergjigja": "Hija", "pranohen": ["hija", "hije"] },
+      { "pyetja": "Ka gjashtë faqe dhe njëzet e një sy, por nuk sheh asgjë.", "pergjigja": "Zari", "pranohen": ["zari", "zar", "zaret"] },
+      { "pyetja": "Ka dimër, verë, vjeshtë e pranverë, por jeton vetëm një vit.", "pergjigja": "Kalendari", "pranohen": ["kalendari", "kalendar"] },
+      { "pyetja": "Ka plot vrima, por prapë mban ujë.", "pergjigja": "Sfungjeri", "pranohen": ["sfungjeri", "sfungjer"] },
+      { "pyetja": "Lind në ujë, rritet në diell, e kur kthehet në ujë, zhduket.", "pergjigja": "Kripa", "pranohen": ["kripa", "kripe"] },
+      { "pyetja": "Udhëton nëpër gjithë botën, por qëndron gjithmonë në një qoshe.", "pergjigja": "Pulla postare", "pranohen": ["pulla", "pulla postare", "pulle"] },
+      { "pyetja": "Sa më e nxehtë të jetë, aq më e freskët quhet.", "pergjigja": "Buka", "pranohen": ["buka", "buke"] },
+      { "pyetja": "Mund ta mbash në dorë pa e prekur kurrë.", "pergjigja": "Premtimi", "pranohen": ["premtimi", "premtim", "fjala"] },
+      { "pyetja": "Ka krahë, por nuk fluturon; rrotullohet me erë dhe bluan grurë.", "pergjigja": "Mulliri me erë", "pranohen": ["mulliri", "mulli", "mulliri me ere"] },
+      { "pyetja": "Bie nga qielli pa u vrarë, e në tokë bëhet lumë.", "pergjigja": "Shiu", "pranohen": ["shiu", "shi", "bora", "bore"] },
+      { "pyetja": "Në mëngjes ecën me katër këmbë, në mesditë me dy dhe në mbrëmje me tre.", "pergjigja": "Njeriu", "pranohen": ["njeriu", "njeri", "njerëzit", "njerezit"] }
+    ]
+  },
+
+  "kuizi": {
+    "_shpjegim": "Pyetje për Shqipërinë dhe Kosovën. 'sakte' është indeksi i përgjigjes së saktë te 'opsionet' (nga 0). Faqja i përzien opsionet vetë.",
+    "ne_dite": 5,
+    "lista": [
+      { "pyetja": "Cili është kryeqyteti i Kosovës?", "opsionet": ["Prishtina", "Prizreni", "Peja", "Gjakova"], "sakte": 0 },
+      { "pyetja": "Cili është mali më i lartë i Shqipërisë?", "opsionet": ["Korabi", "Tomorri", "Dajti", "Jezerca"], "sakte": 0, "shpjegim": "Korabi, në kufi me Maqedoninë e Veriut, arrin rreth 2 764 m." },
+      { "pyetja": "Cili është lumi më i gjatë i Shqipërisë?", "opsionet": ["Drini", "Vjosa", "Semani", "Shkumbini"], "sakte": 0 },
+      { "pyetja": "Në cilin qytet u shpall Pavarësia e Shqipërisë më 28 Nëntor 1912?", "opsionet": ["Vlorë", "Durrës", "Shkodër", "Tiranë"], "sakte": 0 },
+      { "pyetja": "Në cilën datë shpalli Kosova pavarësinë?", "opsionet": ["17 shkurt 2008", "28 nëntor 2008", "17 shkurt 1999", "10 qershor 1999"], "sakte": 0 },
+      { "pyetja": "Në cilin qytet vdiq Gjergj Kastrioti Skënderbeu në vitin 1468?", "opsionet": ["Lezhë", "Krujë", "Shkodër", "Durrës"], "sakte": 0 },
+      { "pyetja": "Sa shkronja ka alfabeti i gjuhës shqipe?", "opsionet": ["36", "32", "26", "38"], "sakte": 0 },
+      { "pyetja": "Në cilin qytet u mbajt Kongresi i Alfabetit në vitin 1908?", "opsionet": ["Manastir", "Prizren", "Elbasan", "Shkodër"], "sakte": 0 },
+      { "pyetja": "Cili qytet njihet si \"qyteti i një mbi një dritareve\"?", "opsionet": ["Berati", "Gjirokastra", "Korça", "Elbasani"], "sakte": 0 },
+      { "pyetja": "Cili qytet, i njohur si \"qyteti i gurtë\", është vendlindja e Ismail Kadaresë?", "opsionet": ["Gjirokastra", "Berati", "Përmeti", "Tepelena"], "sakte": 0 },
+      { "pyetja": "Cili park arkeologjik i trashëgimisë UNESCO ndodhet pranë Sarandës?", "opsionet": ["Butrinti", "Apolonia", "Bylisi", "Antigonea"], "sakte": 0 },
+      { "pyetja": "Cila monedhë përdoret në Kosovë?", "opsionet": ["Euro", "Leku", "Dinari", "Franga"], "sakte": 0 },
+      { "pyetja": "Cila është monedha e Shqipërisë?", "opsionet": ["Leku", "Euro", "Dinari", "Kuna"], "sakte": 0 },
+      { "pyetja": "Cilin liqen e ndan Shqipëria me Malin e Zi?", "opsionet": ["Liqenin e Shkodrës", "Liqenin e Ohrit", "Liqenin e Prespës", "Liqenin e Komanit"], "sakte": 0 },
+      { "pyetja": "Në cilin vit u themelua Lidhja Shqiptare e Prizrenit?", "opsionet": ["1878", "1912", "1908", "1881"], "sakte": 0 },
+      { "pyetja": "Kush ishte presidenti i parë i Kosovës?", "opsionet": ["Ibrahim Rugova", "Fatmir Sejdiu", "Atifete Jahjaga", "Hashim Thaçi"], "sakte": 0 },
+      { "pyetja": "Në cilin qytet lindi Nënë Tereza në vitin 1910?", "opsionet": ["Shkup", "Prizren", "Shkodër", "Tetovë"], "sakte": 0 },
+      { "pyetja": "Kush e shkroi romanin \"Gjenerali i ushtrisë së vdekur\"?", "opsionet": ["Ismail Kadare", "Dritëro Agolli", "Fatos Kongoli", "Petro Marko"], "sakte": 0 },
+      { "pyetja": "Kush është autori i poemës epike \"Lahuta e Malcís\"?", "opsionet": ["Gjergj Fishta", "Naim Frashëri", "Ndre Mjeda", "Migjeni"], "sakte": 0 },
+      { "pyetja": "Cila majë njihet si më e larta brenda territorit të Kosovës?", "opsionet": ["Gjeravica", "Pashtriku", "Luboteni", "Koritniku"], "sakte": 0 },
+      { "pyetja": "Në cilin qytet ndodhet Kalaja e Rozafës?", "opsionet": ["Shkodër", "Lezhë", "Krujë", "Berat"], "sakte": 0 },
+      { "pyetja": "Cili det lag bregdetin e Sarandës?", "opsionet": ["Deti Jon", "Deti Adriatik", "Deti Egje", "Deti i Zi"], "sakte": 0 },
+      { "pyetja": "Cili instrument tradicional ka vetëm një tel dhe shoqëron këngët e kreshnikëve?", "opsionet": ["Lahuta", "Çiftelia", "Sharkia", "Fyelli"], "sakte": 0 },
+      { "pyetja": "Cila traditë muzikore shqiptare është në listën e UNESCO-s për trashëgiminë jomateriale?", "opsionet": ["Iso-polifonia", "Vallja e Rugovës", "Kënga e kreshnikëve", "Tallava"], "sakte": 0 },
+      { "pyetja": "Në cilin qytet ndodhet Sheshi \"Skënderbej\"?", "opsionet": ["Tiranë", "Prishtinë", "Krujë", "Durrës"], "sakte": 0 },
+      { "pyetja": "Cili lumë e përshkon qytetin e Mitrovicës?", "opsionet": ["Ibri", "Drini i Bardhë", "Lumbardhi", "Sitnica"], "sakte": 0 },
+      { "pyetja": "Pranë cilit qytet ndodhet Gryka e Rugovës?", "opsionet": ["Peja", "Prizreni", "Gjakova", "Deçani"], "sakte": 0 },
+      { "pyetja": "Pranë cilit qytet ndodhet Shpella e Gadimes?", "opsionet": ["Lipjan", "Ferizaj", "Gjilan", "Podujevë"], "sakte": 0 },
+      { "pyetja": "Mbretëreshë e cilit popull ishte Teuta?", "opsionet": ["Ilirëve", "Romakëve", "Grekëve", "Thrakëve"], "sakte": 0 },
+      { "pyetja": "Në cilin vit u anëtarësua Shqipëria në NATO?", "opsionet": ["2009", "2004", "2014", "1999"], "sakte": 0 },
+      { "pyetja": "Cili liqen, që Shqipëria e ndan me Maqedoninë e Veriut, është ndër më të vjetrit në Europë?", "opsionet": ["Liqeni i Ohrit", "Liqeni i Shkodrës", "Liqeni i Belshit", "Liqeni i Fierzës"], "sakte": 0 }
+    ]
+  },
+
+  "fjalekerkim": {
+    "_shpjegim": "Temat e fjalëkërkimit. Fjalët shkruhen me shkronja të mëdha; Ç dhe Ë janë shkronja më vete. Çdo ditë zgjidhet një temë dhe 8 fjalë prej saj, që vendosen në një rrjetë 11×11.",
+    "madhesia": 11,
+    "fjale_ne_loje": 8,
+    "temat": [
+      { "titulli": "Qytete të Shqipërisë", "fjalet": ["TIRANË", "DURRËS", "VLORË", "SHKODËR", "KORÇË", "BERAT", "ELBASAN", "FIER", "LEZHË", "KUKËS", "SARANDË", "POGRADEC", "KRUJË", "PËRMET"] },
+      { "titulli": "Qytete të Kosovës", "fjalet": ["PRISHTINË", "PRIZREN", "PEJË", "GJAKOVË", "MITROVICË", "FERIZAJ", "GJILAN", "VUSHTRRI", "PODUJEVË", "DEÇAN", "RAHOVEC", "LIPJAN", "KAÇANIK"] },
+      { "titulli": "Kuzhina tradicionale", "fjalet": ["BYREK", "FLI", "TAVËKOSI", "QOFTE", "TRAHANA", "BAKLLAVA", "JUFKA", "KADAIF", "LLOKUMA", "PISPILI", "FËRGESË", "KOS", "DJATHË", "PITE"] },
+      { "titulli": "Natyra", "fjalet": ["MALI", "LUMI", "DETI", "LIQENI", "PYLLI", "FUSHA", "KODRA", "BURIMI", "SHPELLA", "KANIONI", "LUGINA", "BJESHKA", "UJËVARA", "GJIRI"] },
+      { "titulli": "Muzika dhe veshjet popullore", "fjalet": ["ÇIFTELI", "LAHUTË", "FYELL", "DAULLE", "VALLE", "KËNGË", "XHUBLETË", "PLIS", "QELESHE", "SHARKI", "JELEK", "FUSTANELLË", "OPINGA", "SHAMI"] },
+      { "titulli": "Gjuha dhe shkrimi", "fjalet": ["ALFABET", "SHKRONJË", "FJALË", "FJALI", "LIBËR", "POEZI", "ROMAN", "TREGIM", "GRAMATIKË", "DIALEKT", "GEGËRISHT", "TOSKËRISHT", "LETËR", "VARGU"] }
+    ]
+  }
+}

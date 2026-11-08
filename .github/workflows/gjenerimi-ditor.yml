@@ -1,0 +1,66 @@
+# =========================================================================
+# gjenerimi-ditor.yml — "ORARI" I REDAKTORIT AUTOMATIK (GitHub Actions)
+# GitHub e ekzekuton këtë skedar falas në serverat e vet, sipas orarit më poshtë.
+# Çdo herë: instalon Python-in, ekzekuton skriptet (lajmet + horoskopi), dhe nëse data/ ka ndryshuar,
+# e ruan (commit) në repo. GitHub Pages e publikon faqen e përditësuar automatikisht.
+# =========================================================================
+
+name: Gjenerimi ditor i lajmeve        # emri që shfaqet te skeda "Actions" e repos
+
+on:
+  schedule:
+    # Formati cron: minuta ora dita muaji dita-e-javës, në orën UTC.
+    # "17 */3 * * *" = çdo 3 orë në minutën 17 (00:17, 03:17, 06:17 ... UTC).
+    # Pse disa herë në ditë? Feed-et RSS mbajnë vetëm artikujt e fundit; duke i lexuar shpesh,
+    # skripti i mbledh të gjithë në pishinë dhe në ekzekutimin e parë pas mesnate publikon ditën e kaluar.
+    - cron: "17 */3 * * *"
+  workflow_dispatch:                    # shton butonin "Run workflow" për ta nisur me dorë
+
+permissions:
+  contents: write                       # i lejon workflow-it të bëjë commit të data/*.json
+
+concurrency:                            # nëse një ekzekutim është ende në punë, i riu pret
+  group: gjenerimi-ditor
+  cancel-in-progress: false
+
+jobs:
+  mblidh:
+    runs-on: ubuntu-latest              # makinë virtuale Linux e GitHub-it
+    timeout-minutes: 15                 # siguri: ndalet nëse diçka ngec
+    steps:
+      # 1. Shkarkon kodin e repos në makinë
+      - name: Merr kodin
+        uses: actions/checkout@v4
+
+      # 2. Instalon Python 3.12 (dhe ruan në cache paketat për herët e tjera)
+      - name: Instalo Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      # 3. Instalon bibliotekat nga requirements.txt (feedparser, requests)
+      - name: Instalo varësitë
+        run: pip install -r requirements.txt
+
+      # 4. Ekzekuton redaktorin: mbledh RSS-të dhe përditëson data/
+      - name: Mblidh lajmet
+        run: python scripts/mbledh_lajmet.py
+
+      # 5. Gjeneron horoskopin ditor (sot + nesër). Ditët ekzistuese nuk ndryshohen,
+      #    ndaj ekzekutimet e shpeshta nuk e ndryshojnë horoskopin e publikuar.
+      - name: Gjenero horoskopin
+        run: python scripts/gjenero_horoskopin.py
+
+      # 6. Ruan ndryshimet vetëm nëse ka ndryshime (përndryshe nuk bën asgjë)
+      - name: Ruaj ndryshimet
+        run: |
+          git config user.name  "lajmetari-bot"
+          git config user.email "lajmetari-bot@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "Asnjë ndryshim në data/."
+          else
+            git commit -m "Lajmet: përditësim automatik $(date -u +'%Y-%m-%d %H:%M') UTC"
+            git push
+          fi

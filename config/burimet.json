@@ -1,0 +1,43 @@
+{
+  "_shpjegim": "Lista e mediave nga merren lajmet. JSON nuk lejon komente, ndaj shpjegimet janë në fushat '_shpjegim'. Për çdo media: 'emri' shfaqet në faqe, 'vendi' përcakton nëse lajmi shkon te Shqipëria apo Kosova, 'rss' është adresa e feed-it, 'aktiv' false e kapërcen median pa e fshirë nga lista.",
+
+  "rregullat": {
+    "_shpjegim": "Kufijtë e përzgjedhjes për çdo ditë, njësoj si në detyrën e mëparshme me AI.",
+    "max_nga_nje_media_ne_dite": 2,
+    "max_shqiperi_ne_dite": 10,
+    "max_kosove_ne_dite": 6,
+    "max_dite_per_ekzekutim": 5,
+    "data_me_e_hershme": "2026-10-07",
+    "mbaj_lajme_per_dite": 60,
+    "fjali_ne_permbledhje": 2,
+    "max_karaktere_permbledhje": 320,
+
+    "rubrikat_e_vecanta": {
+      "_shpjegim": "Kuotat ditore për rubrikat e veçanta. Këto lajme numërohen veçmas nga kuotat e Shqipërisë dhe Kosovës. 'dublikata_vetem_brenda_dites': true do të thotë që horoskopi i sotëm nuk krahasohet me atë të djeshëm (titujt janë pothuajse të njëjtë çdo ditë).",
+      "Rozë":     { "max_ne_dite": 4, "max_nga_nje_media": 2, "dublikata_vetem_brenda_dites": false },
+      "Horoskop": { "max_ne_dite": 1, "max_nga_nje_media": 1, "dublikata_vetem_brenda_dites": true }
+    }
+  },
+
+  "burimet": [
+    { "emri": "BalkanWeb",        "vendi": "Shqipëri", "rss": "https://www.balkanweb.com/feed/",  "aktiv": true },
+    { "emri": "Euronews Albania", "vendi": "Shqipëri", "rss": "https://euronews.al/feed/",        "aktiv": true },
+    { "emri": "Vizion Plus",      "vendi": "Shqipëri", "rss": "https://www.vizionplus.tv/feed/",  "aktiv": true },
+    { "emri": "RTSH",             "vendi": "Shqipëri", "rss": "https://rtsh.al/feed/",            "aktiv": true },
+    { "emri": "Reporter.al",      "vendi": "Shqipëri", "rss": "https://www.reporter.al/feed/",    "aktiv": true },
+    { "emri": "ABC News",         "vendi": "Shqipëri", "rss": "https://abcnews.al/feed/",         "aktiv": true },
+
+    { "emri": "Top Channel",      "vendi": "Shqipëri", "rss": "https://top-channel.tv/feed/",     "aktiv": false,
+      "_shpjegim": "Nuk u hap gjatë testimit (faqja refuzon robotët). Provoje vetë dhe vëre true nëse punon." },
+    { "emri": "Report TV",        "vendi": "Shqipëri", "rss": "https://report-tv.al/rss",         "aktiv": false,
+      "_shpjegim": "Adresa e feed-it e paverifikuar; kontrolloje në faqen e tyre." },
+
+    { "emri": "Kosova.info",      "vendi": "Kosovë",   "rss": "https://kosova.info/feed/",        "aktiv": true },
+    { "emri": "Bota Sot",         "vendi": "Kosovë",   "rss": "https://www.botasot.info/rss/",    "aktiv": true },
+
+    { "emri": "Koha.net",         "vendi": "Kosovë",   "rss": "https://www.koha.net/rss",         "aktiv": false,
+      "_shpjegim": "Faqja nuk u hap gjatë testimit; adresa e feed-it e paverifikuar." },
+    { "emri": "Telegrafi",        "vendi": "Kosovë",   "rss": "https://telegrafi.com/feed/",      "aktiv": false,
+      "_shpjegim": "Faqja nuk u hap gjatë testimit; adresa e feed-it e paverifikuar." }
+  ]
+}

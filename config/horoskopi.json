@@ -1,0 +1,160 @@
+{
+  "_shpjegim": "Të dhënat për horoskopin ditor. Skripti scripts/gjenero_horoskopin.py ndërton çdo ditë një parashikim për 12 shenjat duke kombinuar fjalitë e mëposhtme (pa AI). Zgjedhja varet nga data, ndaj e njëjta ditë jep gjithmonë të njëjtin horoskop, dhe dy shenja nuk marrin kurrë të njëjtën fjali në të njëjtën ditë. Mund të shtosh fjali të reja: çdo listë duhet të ketë të paktën 12 fjali.",
+
+  "aktiv": true,
+  "dite_perpara": 1,
+  "mbaj_dite": 14,
+  "shenim": "Horoskop argëtues, i gjeneruar automatikisht nga shabllone teksti. Nuk ka bazë shkencore.",
+
+  "shenjat": [
+    { "emri": "Dashi",       "simboli": "♈", "datat": "21 mars – 19 prill",       "elementi": "Zjarr" },
+    { "emri": "Demi",        "simboli": "♉", "datat": "20 prill – 20 maj",        "elementi": "Tokë" },
+    { "emri": "Binjakët",    "simboli": "♊", "datat": "21 maj – 20 qershor",      "elementi": "Ajër" },
+    { "emri": "Gaforrja",    "simboli": "♋", "datat": "21 qershor – 22 korrik",   "elementi": "Ujë" },
+    { "emri": "Luani",       "simboli": "♌", "datat": "23 korrik – 22 gusht",     "elementi": "Zjarr" },
+    { "emri": "Virgjëresha", "simboli": "♍", "datat": "23 gusht – 22 shtator",    "elementi": "Tokë" },
+    { "emri": "Peshorja",    "simboli": "♎", "datat": "23 shtator – 22 tetor",    "elementi": "Ajër" },
+    { "emri": "Akrepi",      "simboli": "♏", "datat": "23 tetor – 21 nëntor",     "elementi": "Ujë" },
+    { "emri": "Shigjetari",  "simboli": "♐", "datat": "22 nëntor – 21 dhjetor",   "elementi": "Zjarr" },
+    { "emri": "Bricjapi",    "simboli": "♑", "datat": "22 dhjetor – 19 janar",    "elementi": "Tokë" },
+    { "emri": "Ujori",       "simboli": "♒", "datat": "20 janar – 18 shkurt",     "elementi": "Ajër" },
+    { "emri": "Peshqit",     "simboli": "♓", "datat": "19 shkurt – 20 mars",      "elementi": "Ujë" }
+  ],
+
+  "_shpjegim_perputhja": "Cilat elemente shkojnë mirë bashkë, sipas astrologjisë tradicionale (zjarr–ajër, tokë–ujë). Përdoret për 'shenjën më të përputhshme të ditës'.",
+  "perputhja": {
+    "Zjarr": ["Zjarr", "Ajër"],
+    "Ajër":  ["Ajër", "Zjarr"],
+    "Tokë":  ["Tokë", "Ujë"],
+    "Ujë":   ["Ujë", "Tokë"]
+  },
+
+  "ngjyrat": ["e kuqe", "blu", "jeshile", "e verdhë", "portokalli", "vjollcë", "e bardhë", "gri", "rozë", "bojëqielli", "kafe", "ari"],
+
+  "_shpjegim_elementet": "Fjalia e parë e parashikimit të përgjithshëm, sipas elementit të shenjës.",
+  "elementet": {
+    "Zjarr": [
+      "Si shenjë zjarri, sot ndihesh plot vrull dhe dëshirë për veprim.",
+      "Pasioni yt natyror të shtyn përpara, por kujdes të mos nxitohesh.",
+      "Guximi yt sot frymëzon edhe njerëzit përreth.",
+      "Entuziazmi yt është ngjitës; përdore për një qëllim të mirë."
+    ],
+    "Tokë": [
+      "Si shenjë toke, sot vlerëson stabilitetin dhe gjërat konkrete.",
+      "Durimi yt natyror është përparësia më e madhe e ditës.",
+      "Praktikaliteti yt të ndihmon të gjesh zgjidhje të thjeshta.",
+      "Sot ndihesh më mirë kur gjithçka është në vendin e vet."
+    ],
+    "Ajër": [
+      "Si shenjë ajri, sot mendja jote është e shpejtë dhe kurioze.",
+      "Komunikimi është pika jote e fortë sot.",
+      "Idetë e reja vijnë lehtë; ndaji me të tjerët.",
+      "Nevoja për liri dhe ndryshim ndihet më shumë se zakonisht."
+    ],
+    "Ujë": [
+      "Si shenjë uji, sot je më i ndjeshëm ndaj emocioneve të të tjerëve.",
+      "Intuita jote është veçanërisht e fortë; besoji.",
+      "Empatia jote të afron me njerëzit përreth.",
+      "Ke nevojë për pak qetësi për të rimbushur energjinë."
+    ]
+  },
+
+  "kategorite": {
+    "pergjithshme": [
+      "Dita nis me një ritëm të qetë, që të jep kohë të rregullosh mendimet para se të marrësh vendime.",
+      "Një bisedë e papritur mund të të hapë një derë që e mendoje të mbyllur.",
+      "Energjia jote është e lartë dhe njerëzit e vënë re; përdore për të përfunduar diçka që e ke lënë përgjysmë.",
+      "Sot është e rëndësishme të dëgjosh më shumë sesa të flasësh; detajet e vogla kanë vlerë.",
+      "Një lajm i mirë nga dikush i largët të përmirëson disponimin.",
+      "Mos u nxito: gjërat që sot duken të ngadalta do të ecin më shpejt nga fundi i javës.",
+      "Kreativiteti yt është në kulm; një ide e re meriton të shkruhet diku para se të harrohet.",
+      "Mund të ndihesh pak i lodhur nga detyrimet, por një pushim i shkurtër të rikthen fokusin.",
+      "Dita të favorizon për të rregulluar marrëdhëniet me një mik ose një familjar.",
+      "Një sfidë e vogël të vë në provë durimin, por e kalon me qetësi dhe humor.",
+      "Është moment i mirë për të planifikuar: shkruaj tri gjëra që do të arrish deri në fund të muajit.",
+      "Intuita jote sot është e saktë; besoji ndjesisë së parë.",
+      "Një rastësi e këndshme të kujton se jo gjithçka duhet planifikuar.",
+      "Organizimi është çelësi i ditës: një listë e thjeshtë detyrash të kursen shumë kohë.",
+      "Dikush mund të kërkojë ndihmën tënde; bujaria jote do të shpërblehet më vonë.",
+      "Ndryshimet e vogla në rutinë sjellin rezultate më të mëdha sesa pret.",
+      "Dita është e përshtatshme për të mësuar diçka të re, qoftë edhe një gjë të vogël.",
+      "Pas disa ditësh të ngarkuara, sot gjen më shumë qartësi dhe qetësi."
+    ],
+    "dashuri": [
+      "Në dashuri, një gjest i vogël vlen më shumë se fjalët e mëdha.",
+      "Partneri pret më shumë vëmendje nga ti; një mbrëmje e qetë bashkë do t'ju afrojë.",
+      "Për beqarët, një takim i rastësishëm mund të kthehet në një bisedë të gjatë.",
+      "Mos i lër keqkuptimet e vogla të rriten; një bisedë e sinqertë i zgjidh shpejt.",
+      "Ndjenjat janë të forta sot; shprehi me qetësi dhe pa nxitim.",
+      "Një kujtim i përbashkët sjell ngrohtësi në marrëdhënie.",
+      "Është ditë e mirë për të bërë një surprizë të këndshme.",
+      "Për çiftet, planifikimi i diçkaje të përbashkët e forcon lidhjen.",
+      "Beqarët ndihen më të sigurt se zakonisht, dhe ky vetëbesim tërheq vëmendje.",
+      "Dëgjo me kujdes çfarë të thotë partneri, edhe kur nuk e thotë drejtpërdrejt.",
+      "Një mesazh nga dikush i veçantë ta përmirëson ditën.",
+      "Mos e krahaso marrëdhënien tënde me të tjerët; ajo ka ritmin e vet.",
+      "Pak durim sot shmang një debat të panevojshëm.",
+      "Romanca rikthehet në vëmendje; lëre veten të shijosh momentin.",
+      "Një shoqëri e vjetër mund të marrë një kuptim të ri.",
+      "Sinqeriteti yt sot vlerësohet më shumë se çdo dhuratë.",
+      "Koha me familjen ka efekt pozitiv edhe në jetën në çift.",
+      "Mos u mbyll në vetvete; ndaje me dikë atë që të shqetëson."
+    ],
+    "pune": [
+      "Në punë, një detyrë që e shtyje prej ditësh më në fund zgjidhet.",
+      "Kolegët e vlerësojnë mendimin tënd; mos ki frikë ta thuash.",
+      "Kujdes me shpenzimet impulsive sot; një blerje mund të presë.",
+      "Një projekt i ri kërkon përqendrim, por rezultatet do të duken shpejt.",
+      "Është moment i mirë për të kërkuar këshillë nga dikush me më shumë përvojë.",
+      "Financat janë të qëndrueshme, por një buxhet i thjeshtë të ndihmon të kursesh.",
+      "Bashkëpunimi sjell më shumë sukses sesa puna e vetmuar.",
+      "Mund të marrësh një propozim interesant; mendohu mirë para se ta pranosh.",
+      "Përgjegjësitë shtohen, por ti ke aftësinë t'i menaxhosh.",
+      "Një gabim i vogël i së kaluarës tani bëhet mësim i vlefshëm.",
+      "Dita favorizon negociatat dhe marrëveshjet e qarta.",
+      "Fokusohu te prioritetet; jo çdo detyrë kërkon zgjidhje sot.",
+      "Iniciativa jote vihet re nga eprorët.",
+      "Një investim i vogël në njohuritë e tua do të shpërblehet në të ardhmen.",
+      "Shmang diskutimet për para me të afërmit sot.",
+      "Rregulli në tavolinën e punës sjell rregull edhe në mendime.",
+      "Një takim i planifikuar shkon më mirë sesa e pret.",
+      "Puna e palodhur e javëve të fundit fillon të japë fryte."
+    ],
+    "shendet": [
+      "Trupi kërkon më shumë ujë dhe më pak kafe sot.",
+      "Një shëtitje e shkurtër në ajër të pastër ta rikthen energjinë.",
+      "Kujdes me gjumin; të flesh pak më herët bën diferencë.",
+      "Ushqimi i lehtë dhe i rregullt të mban në formë gjatë gjithë ditës.",
+      "Pak lëvizje fizike të ndihmon ta largosh stresin.",
+      "Mos e anashkalo mëngjesin; është baza e një dite produktive.",
+      "Bëj pushime të shkurtra nga ekrani që të çlodhen sytë.",
+      "Një aktivitet që të pëlqen të sjell qetësi mendore.",
+      "Kushtoji vëmendje qëndrimit të trupit kur punon ulur.",
+      "Frymëmarrja e thellë për pak minuta e ul tensionin e ditës.",
+      "Energjia është e mirë, por mos e tepro me ngarkesën.",
+      "Frutat dhe perimet e freskëta i japin trupit atë që i mungon.",
+      "Një bisedë me një mik është ilaç i mirë për humorin.",
+      "Dëgjoji sinjalet e trupit dhe pusho kur ndihesh i lodhur.",
+      "Sot është ditë e mirë për të nisur një zakon të ri të shëndetshëm.",
+      "Pak muzikë e qetë në mbrëmje të ndihmon të flesh më mirë."
+    ],
+    "keshilla": [
+      "Bëj një gjë që e ke shtyrë prej kohësh.",
+      "Buzëqesh më shumë, edhe kur dita është e ngarkuar.",
+      "Shkruaj një gjë për të cilën je mirënjohës.",
+      "Thuaj 'jo' kur e ke të nevojshme.",
+      "Telefono dikë që nuk e ke dëgjuar prej kohësh.",
+      "Lexo disa faqe nga një libër që të pëlqen.",
+      "Mos u krahaso me të tjerët.",
+      "Lëre telefonin mënjanë për një orë.",
+      "Ndaje kohën në mënyrë të barabartë mes punës dhe pushimit.",
+      "Fillo me detyrën më të vështirë.",
+      "Fale një gabim të vogël, tëndin ose të dikujt tjetër.",
+      "Dil për një shëtitje pa ndonjë qëllim të caktuar.",
+      "Pyet kur nuk je i sigurt.",
+      "Gëzohu për sukseset e vogla.",
+      "Rregullo një cep të shtëpisë.",
+      "Ji i durueshëm me veten."
+    ]
+  }
+}
