@@ -1,7 +1,345 @@
 {
   "shenim": "Horoskop argëtues, i gjeneruar automatikisht nga shabllone teksti. Nuk ka bazë shkencore.",
-  "perditesuar": "2026-11-13T21:59:30Z",
+  "perditesuar": "2026-11-14T01:23:25Z",
   "dite": {
+    "2026-11-15": [
+      {
+        "emri": "Dashi",
+        "simboli": "♈",
+        "datat": "21 mars – 19 prill",
+        "elementi": "Zjarr",
+        "pergjithshme": "Entuziazmi yt është ngjitës; përdore për një qëllim të mirë. Mund të ndihesh pak i lodhur nga detyrimet, por një pushim i shkurtër të rikthen fokusin.",
+        "fushat": [
+          {
+            "titulli": "Dashuri",
+            "yje": 5,
+            "teksti": "Partneri pret më shumë vëmendje nga ti; një mbrëmje e qetë bashkë do t'ju afrojë."
+          },
+          {
+            "titulli": "Punë dhe financa",
+            "yje": 2,
+            "teksti": "Një gabim i vogël i së kaluarës tani bëhet mësim i vlefshëm."
+          },
+          {
+            "titulli": "Shëndet",
+            "yje": 2,
+            "teksti": "Mos e anashkalo mëngjesin; është baza e një dite produktive."
+          }
+        ],
+        "keshilla": "Ji i durueshëm me veten.",
+        "numri": 94,
+        "ngjyra": "kafe",
+        "perputhja": "Ujori"
+      },
+      {
+        "emri": "Demi",
+        "simboli": "♉",
+        "datat": "20 prill – 20 maj",
+        "elementi": "Tokë",
+        "pergjithshme": "Sot ndihesh më mirë kur gjithçka është në vendin e vet. Pas disa ditësh të ngarkuara, sot gjen më shumë qartësi dhe qetësi.",
+        "fushat": [
+          {
+            "titulli": "Dashuri",
+            "yje": 4,
+            "teksti": "Ndjenjat janë të forta sot; shprehi me qetësi dhe pa nxitim."
+          },
+          {
+            "titulli": "Punë dhe financa",
+            "yje": 4,
+            "teksti": "Një takim i planifikuar shkon më mirë sesa e pret."
+          },
+          {
+            "titulli": "Shëndet",
+            "yje": 4,
+            "teksti": "Ushqimi i lehtë dhe i rregullt të mban në formë gjatë gjithë ditës."
+          }
+        ],
+        "keshilla": "Thuaj 'jo' kur e ke të nevojshme.",
+        "numri": 15,
+        "ngjyra": "e bardhë",
+        "perputhja": "Virgjëresha"
+      },
+      {
+        "emri": "Binjakët",
+        "simboli": "♊",
+        "datat": "21 maj – 20 qershor",
+        "elementi": "Ajër",
+        "pergjithshme": "Nevoja për liri dhe ndryshim ndihet më shumë se zakonisht. Intuita jote sot është e saktë; besoji ndjesisë së parë.",
+        "fushat": [
+          {
+            "titulli": "Dashuri",
+            "yje": 2,
+            "teksti": "Mos e krahaso marrëdhënien tënde me të tjerët; ajo ka ritmin e vet."
+          },
+          {
+            "titulli": "Punë dhe financa",
+            "yje": 4,
+            "teksti": "Iniciativa jote vihet re nga eprorët."
+          },
+          {
+            "titulli": "Shëndet",
+            "yje": 2,
+            "teksti": "Dëgjoji sinjalet e trupit dhe pusho kur ndihesh i lodhur."
+          }
+        ],
+        "keshilla": "Ndaje kohën në mënyrë të barabartë mes punës dhe pushimit.",
+        "numri": 33,
+        "ngjyra": "ari",
+        "perputhja": "Luani"
+      },
+      {
+        "emri": "Gaforrja",
+        "simboli": "♋",
+        "datat": "21 qershor – 22 korrik",
+        "elementi": "Ujë",
+        "pergjithshme": "Ke nevojë për pak qetësi për të rimbushur energjinë. Mos u nxito: gjërat që sot duken të ngadalta do të ecin më shpejt nga fundi i javës.",
+        "fushat": [
+          {
+            "titulli": "Dashuri",
+            "yje": 4,
+            "teksti": "Pak durim sot shmang një debat të panevojshëm."
+          },
+          {
+            "titulli": "Punë dhe financa",
+            "yje": 3,
+            "teksti": "Shmang diskutimet për para me të afërmit sot."
+          },
+          {
+            "titulli": "Shëndet",
+            "yje": 4,
+            "teksti": "Pak lëvizje fizike të ndihmon ta largosh stresin."
+          }
+        ],
+        "keshilla": "Lexo disa faqe nga një libër që të pëlqen.",
+        "numri": 25,
+        "ngjyra": "blu",
+        "perputhja": "Virgjëresha"
+      },
+      {
+        "emri": "Luani",
+        "simboli": "♌",
+        "datat": "23 korrik – 22 gusht",
+        "elementi": "Zjarr",
+        "pergjithshme": "Guximi yt sot frymëzon edhe njerëzit përreth. Dita është e përshtatshme për të mësuar diçka të re, qoftë edhe një gjë të vogël.",
+        "fushat": [
+          {
+            "titulli": "Dashuri",
+            "yje": 2,
+            "teksti": "Një shoqëri e vjetër mund të marrë një kuptim të ri."
+          },
+          {
+            "titulli": "Punë dhe financa",
+            "yje": 2,
+            "teksti": "Financat janë të qëndrueshme, por një buxhet i thjeshtë të ndihmon të kursesh."
+          },
+          {
+            "titulli": "Shëndet",
+            "yje": 2,
+            "teksti": "Frymëmarrja e thellë për pak minuta e ul tensionin e ditës."
+          }
+        ],
+        "keshilla": "Buzëqesh më shumë, edhe kur dita është e ngarkuar.",
+        "numri": 14,
+        "ngjyra": "vjollcë",
+        "perputhja": "Shigjetari"
+      },
+      {
+        "emri": "Virgjëresha",
+        "simboli": "♍",
+        "datat": "23 gusht – 22 shtator",
+        "elementi": "Tokë",
+        "pergjithshme": "Si shenjë toke, sot vlerëson stabilitetin dhe gjërat konkrete. Dikush mund të kërkojë ndihmën tënde; bujaria jote do të shpërblehet më vonë.",
+        "fushat": [
+          {
+            "titulli": "Dashuri",
+            "yje": 2,
+            "teksti": "Mos u mbyll në vetvete; ndaje me dikë atë që të shqetëson."
+          },
+          {
+            "titulli": "Punë dhe financa",
+            "yje": 4,
+            "teksti": "Në punë, një detyrë që e shtyje prej ditësh më në fund zgjidhet."
+          },
+          {
+            "titulli": "Shëndet",
+            "yje": 3,
+            "teksti": "Trupi kërkon më shumë ujë dhe më pak kafe sot."
+          }
+        ],
+        "keshilla": "Telefono dikë që nuk e ke dëgjuar prej kohësh.",
+        "numri": 8,
+        "ngjyra": "e verdhë",
+        "perputhja": "Akrepi"
+      },
+      {
+        "emri": "Peshorja",
+        "simboli": "♎",
+        "datat": "23 shtator – 22 tetor",
+        "elementi": "Ajër",
+        "pergjithshme": "Komunikimi është pika jote e fortë sot. Është moment i mirë për të planifikuar: shkruaj tri gjëra që do të arrish deri në fund të muajit.",
+        "fushat": [
+          {
+            "titulli": "Dashuri",
+            "yje": 4,
+            "teksti": "Romanca rikthehet në vëmendje; lëre veten të shijosh momentin."
+          },
+          {
+            "titulli": "Punë dhe financa",
+            "yje": 5,
+            "teksti": "Një investim i vogël në njohuritë e tua do të shpërblehet në të ardhmen."
+          },
+          {
+            "titulli": "Shëndet",
+            "yje": 4,
+            "teksti": "Një shëtitje e shkurtër në ajër të pastër ta rikthen energjinë."
+          }
+        ],
+        "keshilla": "Dil për një shëtitje pa ndonjë qëllim të caktuar.",
+        "numri": 31,
+        "ngjyra": "portokalli",
+        "perputhja": "Luani"
+      },
+      {
+        "emri": "Akrepi",
+        "simboli": "♏",
+        "datat": "23 tetor – 21 nëntor",
+        "elementi": "Ujë",
+        "pergjithshme": "Si shenjë uji, sot je më i ndjeshëm ndaj emocioneve të të tjerëve. Një bisedë e papritur mund të të hapë një derë që e mendoje të mbyllur.",
+        "fushat": [
+          {
+            "titulli": "Dashuri",
+            "yje": 2,
+            "teksti": "Është ditë e mirë për të bërë një surprizë të këndshme."
+          },
+          {
+            "titulli": "Punë dhe financa",
+            "yje": 4,
+            "teksti": "Kujdes me shpenzimet impulsive sot; një blerje mund të presë."
+          },
+          {
+            "titulli": "Shëndet",
+            "yje": 5,
+            "teksti": "Bëj pushime të shkurtra nga ekrani që të çlodhen sytë."
+          }
+        ],
+        "keshilla": "Mos u krahaso me të tjerët.",
+        "numri": 71,
+        "ngjyra": "jeshile",
+        "perputhja": "Demi"
+      },
+      {
+        "emri": "Shigjetari",
+        "simboli": "♐",
+        "datat": "22 nëntor – 21 dhjetor",
+        "elementi": "Zjarr",
+        "pergjithshme": "Entuziazmi yt është ngjitës; përdore për një qëllim të mirë. Energjia jote është e lartë dhe njerëzit e vënë re; përdore për të përfunduar diçka që e ke lënë përgjysmë.",
+        "fushat": [
+          {
+            "titulli": "Dashuri",
+            "yje": 5,
+            "teksti": "Për beqarët, një takim i rastësishëm mund të kthehet në një bisedë të gjatë."
+          },
+          {
+            "titulli": "Punë dhe financa",
+            "yje": 2,
+            "teksti": "Puna e palodhur e javëve të fundit fillon të japë fryte."
+          },
+          {
+            "titulli": "Shëndet",
+            "yje": 4,
+            "teksti": "Energjia është e mirë, por mos e tepro me ngarkesën."
+          }
+        ],
+        "keshilla": "Gëzohu për sukseset e vogla.",
+        "numri": 74,
+        "ngjyra": "gri",
+        "perputhja": "Ujori"
+      },
+      {
+        "emri": "Bricjapi",
+        "simboli": "♑",
+        "datat": "22 dhjetor – 19 janar",
+        "elementi": "Tokë",
+        "pergjithshme": "Praktikaliteti yt të ndihmon të gjesh zgjidhje të thjeshta. Një sfidë e vogël të vë në provë durimin, por e kalon me qetësi dhe humor.",
+        "fushat": [
+          {
+            "titulli": "Dashuri",
+            "yje": 5,
+            "teksti": "Koha me familjen ka efekt pozitiv edhe në jetën në çift."
+          },
+          {
+            "titulli": "Punë dhe financa",
+            "yje": 3,
+            "teksti": "Është moment i mirë për të kërkuar këshillë nga dikush me më shumë përvojë."
+          },
+          {
+            "titulli": "Shëndet",
+            "yje": 3,
+            "teksti": "Një bisedë me një mik është ilaç i mirë për humorin."
+          }
+        ],
+        "keshilla": "Lëre telefonin mënjanë për një orë.",
+        "numri": 31,
+        "ngjyra": "bojëqielli",
+        "perputhja": "Peshqit"
+      },
+      {
+        "emri": "Ujori",
+        "simboli": "♒",
+        "datat": "20 janar – 18 shkurt",
+        "elementi": "Ajër",
+        "pergjithshme": "Idetë e reja vijnë lehtë; ndaji me të tjerët. Një lajm i mirë nga dikush i largët të përmirëson disponimin.",
+        "fushat": [
+          {
+            "titulli": "Dashuri",
+            "yje": 5,
+            "teksti": "Mos i lër keqkuptimet e vogla të rriten; një bisedë e sinqertë i zgjidh shpejt."
+          },
+          {
+            "titulli": "Punë dhe financa",
+            "yje": 4,
+            "teksti": "Mund të marrësh një propozim interesant; mendohu mirë para se ta pranosh."
+          },
+          {
+            "titulli": "Shëndet",
+            "yje": 5,
+            "teksti": "Kushtoji vëmendje qëndrimit të trupit kur punon ulur."
+          }
+        ],
+        "keshilla": "Pyet kur nuk je i sigurt.",
+        "numri": 88,
+        "ngjyra": "rozë",
+        "perputhja": "Dashi"
+      },
+      {
+        "emri": "Peshqit",
+        "simboli": "♓",
+        "datat": "19 shkurt – 20 mars",
+        "elementi": "Ujë",
+        "pergjithshme": "Intuita jote është veçanërisht e fortë; besoji. Organizimi është çelësi i ditës: një listë e thjeshtë detyrash të kursen shumë kohë.",
+        "fushat": [
+          {
+            "titulli": "Dashuri",
+            "yje": 2,
+            "teksti": "Në dashuri, një gjest i vogël vlen më shumë se fjalët e mëdha."
+          },
+          {
+            "titulli": "Punë dhe financa",
+            "yje": 4,
+            "teksti": "Rregulli në tavolinën e punës sjell rregull edhe në mendime."
+          },
+          {
+            "titulli": "Shëndet",
+            "yje": 2,
+            "teksti": "Një aktivitet që të pëlqen të sjell qetësi mendore."
+          }
+        ],
+        "keshilla": "Rregullo një cep të shtëpisë.",
+        "numri": 47,
+        "ngjyra": "e kuqe",
+        "perputhja": "Bricjapi"
+      }
+    ],
     "2026-11-14": [
       {
         "emri": "Dashi",
