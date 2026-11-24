@@ -38206,5 +38206,31 @@
     "burimi": "Bota Sot",
     "vendi": "Kosovë",
     "publikuar": "2026-11-23T23:05:02+01:00"
+  },
+  {
+    "titulli": "Zelensky: Rusia po planifikon sulme të reja ajrore ndaj Ukrainës",
+    "teksti": "Presidenti ukrainas, Volodymyr Zelensky, ka paralajmëruar se Rusia po përgatit sulme të reja ajrore ndaj Ukrainës. Sipas tij, informacionet e mbledhura nga shërbimet e inteligjencës ukrainase tregojnë se Moska po bën përgatitje për goditje të tjera nga ajri. Në një videomesazh të publikuar mbrëmjen e së hënës, Zelensky deklaroi se shërbimet e inteligjencës kanë siguruar informacione lidhur me planet e reja ruse, por nuk dha detaje se kur mund të ndodhin sulmet e mundshme. “Shërbimet tona të inteligjencës kanë informacione që lidhen me përgatitjet e rusëve për sulme të reja ajrore”, u shpreh presidenti ukrainas. Zelensky iu drejtua gjithashtu Shteteve të Bashkuara dhe vendeve të tjera, duke rikujtuar se furnizimi i Ukrainës me sisteme të mbrojtjes kundërajrore varet nga vendimet e tyre. Ai theksoi kështu rëndësinë e mbështetjes ndërkombëtare për forcimin e mbrojtjes ajrore të vendit, në një kohë kur Ukraina paralajmëron për kërcënime të reja nga Rusia.",
+    "kategorite": [
+      "Bota",
+      "Lajmi i fundit",
+      "Volodymyr Zelensky"
+    ],
+    "url": "https://euronews.al/zelensky-rusia-po-planifikon-sulme-te-reja-ajrore-ndaj-ukraines/",
+    "burimi": "Euronews Albania",
+    "vendi": "Shqipëri",
+    "publikuar": "2026-11-24T04:19:00+01:00"
+  },
+  {
+    "titulli": "Inteligjenca artificiale Claude pretendon zgjidhjen e një prej problemeve më të mëdha të matematikës",
+    "teksti": "Modeli i inteligjencës artificiale Claude, i kompanisë Anthropic, ka ndihmuar matematikatin Levent Alpöge në hartimin e një prove për Hipotezën e Riemann-it, një prej problemeve më të famshme dhe më të vështira të matematikës, e pazgjidhur prej 167 vitesh. Hipoteza e Riemann-it lidhet me shpërndarjen e numrave të thjeshtë, të cilët pjesëtohen vetëm me numrin 1 dhe me vetveten. Ajo sugjeron se pas shpërndarjes së tyre, që në pamje të parë duket e rastësishme, ekziston një strukturë matematikore e rregullt dhe e fshehur. Zgjidhja e këtij problemi mund të ketë pasoja të rëndësishme edhe përtej matematikës teorike, veçanërisht në teorinë e numrave, kriptografinë dhe zhvillimin e sistemeve kompjuterike. Alpöge ka punuar për muaj të tërë me Claude, duke paraqitur fillimisht një rezultat të pjesshëm në gusht. Ky nuk është projekti i tij i parë i këtij lloji. Në shtator, ai kishte paraqitur gjithashtu një provë të pjesshme për ekuacionet Navier-Stokes dhe Euler, të cilat përshkruajnë lëvizjen e lëngjeve dhe gazeve. Për të verifikuar rezultatet, studiuesi i dorëzoi provat në Lean, një platformë interaktive me burim të hapur që përdoret për kontrollimin formal të provave matematikore. Sipas raportimit, brenda 48 orëve, matematikani i MIT-it, Andrew Sutherland, së bashku me iniciativën Lean FRO/Mathlib, kontrolluan provën dhe nuk identifikuan gabime në verifikimin automatik. Materiali përfshin mbi 17 milionë rreshta kodi, të shpërndarë në më shumë se 175 mijë skedarë, duke e bërë analizimin e plotë të tij një proces kompleks. Megjithatë, prova ende duhet të shqyrtohet dhe konfirmohet nga komuniteti ndërkombëtar i matematikës. Nëse vërtetohet, ky zhvillim mund të shënojë një moment historik për shkencën dhe inteligjencën artificiale.",
+    "kategorite": [
+      "Bota",
+      "Claude AI",
+      "Inteligjenca Artificiale"
+    ],
+    "url": "https://euronews.al/inteligjenca-artificiale-claude-pretendon-zgjidhjen-e-nje-prej-problemeve-me-te-medha-te-matematikes/",
+    "burimi": "Euronews Albania",
+    "vendi": "Shqipëri",
+    "publikuar": "2026-11-24T03:05:00+01:00"
   }
 ]
